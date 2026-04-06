@@ -1,0 +1,6 @@
+SELECT ship_country,
+COUNT(*) 
+FROM orders
+GROUP BY ship_country
+HAVING COUNT(*) > 3
+ORDER BY count DESC
