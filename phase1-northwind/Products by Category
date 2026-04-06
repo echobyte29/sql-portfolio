@@ -1,0 +1,5 @@
+SELECT category_id,
+COUNT(DISTINCT(product_name)),
+ROUND(AVG(unit_price)::numeric,2)
+FROM products
+GROUP BY category_id
