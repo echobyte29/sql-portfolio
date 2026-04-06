@@ -1,0 +1,13 @@
+SELECT ship_name, freight
+FROM orders
+WHERE freight > 100
+GROUP BY ship_name, freight
+ORDER BY freight DESC
+
+-----
+
+SELECT 
+COUNT(*),
+COUNT(CASE WHEN freight > 100 THEN 1 END),
+(COUNT(CASE WHEN freight > 100 THEN 1 END)*100)/COUNT(*) AS big_order_percentage
+FROM orders
